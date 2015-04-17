@@ -359,8 +359,8 @@
 					var e	= this,
 						$e	= $(e);
 
-					var addAfter = function(elem) {
-						if ( after && !$e.is( o.after ) && !$e.find( o.after ).length  )
+					var addAfter = function( elem ) {
+						if ( after )
 						{
 							elem[ elem.is( notx ) ? 'after' : 'append' ]( after );
 						}
