@@ -395,8 +395,8 @@
 
 							if ( !isTruncated )
 							{
-								var txt = addEllipsis( getTextContent( e ), o );
-								setTextContent( e, txt );
+								var lastTextNode = findLastTextNode( $e, $d );
+								if (lastTextNode) ellipsisElement( $( lastTextNode ), $d, $i, o, after );
 								addAfter( $e );
 								isTruncated = true;
 							}
