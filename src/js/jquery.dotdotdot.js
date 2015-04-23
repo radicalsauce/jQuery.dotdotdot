@@ -395,9 +395,16 @@
 
 							if ( !isTruncated )
 							{
+								// force truncation of last text node within $e
 								var lastTextNode = findLastTextNode( $e, $d );
-								if (lastTextNode) ellipsisElement( $( lastTextNode ), $d, $i, o, after );
-								addAfter( $e );
+								if ( lastTextNode ) ellipsisElement( $( lastTextNode ), $d, $i, o, after );
+
+								// if $e contains that last text node, then we want after link immediately after it
+								if ( $.contains( $e[0], lastTextNode ) ) {
+									addAfter( $e );
+								} else {
+									addAfter( $elem );
+								}
 								isTruncated = true;
 							}
 						}
