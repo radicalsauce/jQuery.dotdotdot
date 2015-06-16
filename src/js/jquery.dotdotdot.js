@@ -344,7 +344,7 @@
 		var isTruncated	= false;
 
 		//	Don't put the ellipsis directly inside these elements
-		var notx = 'a table, thead, tbody, tfoot, tr, col, colgroup, object, embed, param, ol, ul, dl, blockquote, select, optgroup, option, textarea, script, style';
+		var notx = 'a, table, thead, tbody, tfoot, tr, col, colgroup, object, embed, param, ol, ul, dl, blockquote, select, optgroup, option, textarea, script, style';
 
 		//	Don't remove these elements even if they are after the ellipsis
 		var noty = 'script, .dotdotdot-keep';
@@ -366,7 +366,7 @@
 						}
 					};
 
-					if ( typeof e == 'undefined' || ( e.nodeType == 3 && $.trim( e.data ).length == 0 ) )
+					if ( typeof e == 'undefined' )
 					{
 						return true;
 					}
